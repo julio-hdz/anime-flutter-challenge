@@ -12,12 +12,21 @@ class HomePage extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             title: const Text('iVoy Challenge'),
+            backgroundColor: Colors.blueGrey[900],
+            foregroundColor: Colors.amber[700],
           ),
-          body: Center(
-            child: ElevatedButton(
-              onPressed: () => NavigatorUtils.navigateTo(context, AnimeListPage()),
-              child: const Text('ir al listado de animes'),
+          body: Stack(
+            fit: StackFit.expand,
+            children: [
+            Image.asset('assets/landing.png',fit: BoxFit.fill),
+            Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom( primary: Colors.amber[700]),
+                onPressed: () => NavigatorUtils.navigateTo(context, AnimeListPage()),
+                child: const Text('ir al listado de animes populares'),
+              ),
             ),
+            ],
           ),
         ));
   }
